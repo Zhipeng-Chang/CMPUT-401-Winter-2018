@@ -1,7 +1,6 @@
-# CMPUT-401-Winter-2018
-SmartDeployer <br />
+# CMPUT-401-Winter-2018 SmartDeployer 
 Team members: <br />
-Zhipeng Chanb (zchang@ualberta.ca or zchang@zchang.tech) <br />
+Zhipeng Chang (zchang@ualberta.ca or zchang@zchang.tech) <br />
 Xuan Cao (xcao2@ualberta.ca) <br />
 Yuan Feng (yfeng3@ualberta.ca) <br />
 Nick Anic (nanic@ualberta.ca) <br />
