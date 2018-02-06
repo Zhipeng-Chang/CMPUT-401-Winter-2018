@@ -1,6 +1,6 @@
-#For visualize the output of ycsb report
+#For visualize the output of ycsb report on terminal
 #version 1.0  final verison
-#author: Xuan Cao "https://github.com/Danissss"
+#author: smartDeployer team "https://github.com/Danissss"
 
 
 fileName = "workload.txt"
