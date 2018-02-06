@@ -16,7 +16,7 @@ $chmod u+x smartDeployer.sh
 #run it with default setting: numbers of container: 1; optimization: OFF;
 $./smartDeployer.sh 
 
-#user can define how many docker container they want by using "-c [numbers of container]" 
+#user can define how many docker container they want by using "-c [numbers of container]" <br/>
 #example (create 5 containers; optimization OFF):
 
 $./smartDeployer.sh -c 5 
