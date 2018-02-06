@@ -11,8 +11,7 @@ sudo apt-get update
 
 apt-get install curl
 # obtain the ycsb
-curl -O --location
-          https://github.com/brianfrankcooper/YCSB/releases/download/0.12.0/ycsb-0.12.0.tar.gz
+curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.12.0/ycsb-0.12.0.tar.gz
 tar xfvz ycsb-0.12.0.tar.gz
 rm ycsb-0.12.0.tar.gz
 cd ycsb-0.12.0
@@ -49,6 +48,11 @@ cd ycsb-0.12.0
 #  cd /etc/cassandra/cassandra.yaml
 # http://docs.datastax.com/en/cassandra/2.1/cassandra/configuration/configCassandra_yaml_r.html#configCassandra_yaml_r__PerformanceTuningProps
 # this contain the main factors that could optimize the performance of cassandra
+
+# run ycsb against cassandra 
+# cassandra-cql or cassandra2-cql
+# workloads could be workloada to workloadn
+./bin/ycsb load cassandra-cql -s -P workloads/workloada > output.txt
 
 # save the progress
 
