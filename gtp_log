@@ -1,0 +1,16 @@
+= Go1
+
+= 2
+
+= 0.1
+
+= protocol_version quit name boardsize showboard clear_board komi version known_command set_free_handicap genmove list_commands play legal_moves score
+
+= 
+
+= 
+
+= 
+
+= 
+
