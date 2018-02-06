@@ -11,7 +11,7 @@ Requirement:
 
 Usage:
 
-python3 parsing_output.py
+$python3 parsing_output.py
 
 
 Note: the ouput file of ycsb has to be named "workload.txt", or change the file name inside the python script file
