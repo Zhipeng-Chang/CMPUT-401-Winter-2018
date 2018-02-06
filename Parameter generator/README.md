@@ -8,16 +8,15 @@ Python
 
 # Initial stage:
 
-## Parameters may have impact on Docker: memory, CPU and block I/O.
-
+Parameters may have impact on Docker: memory, CPU and block I/O.
 (Reference: https://docs.docker.com/config/containers/resource_constraints/)
 
-## Parameters may have impact on Cassandra: commit log, compaction, memory, disk I/O, CPU, reads, and writes.
+Parameters may have impact on Cassandra: commit log, compaction, memory, disk I/O, CPU, reads, and writes.
 (Reference: https://docs.datastax.com/en/cassandra/3.0/cassandra/configuration/configCassandra_yaml.html#configCassandra_yaml__PerformanceTuningProps)
 
 # Next stage:
 
-## Need to test and make decision what paramrters will be changed to optimiza the overall performance.
+Need to test and make decision what paramrters will be changed to optimiza the overall performance.
 
 
 
