@@ -13,6 +13,7 @@ import math
 
 # Read above!!!
 GROUPS = ["0-100","101-200","201-300","301-400","401-500","501-600","601-700","701-800","801-900","901-1000"]
+SETTING_TITLE = ["CPU","MEMORY","I/O","DISK"]
 GAP = 100
 
 if __name__ == "__main__":
@@ -49,7 +50,7 @@ if __name__ == "__main__":
         
         single_group_all_result = []
         for setting_index in range(num_of_para-1):
-            single_group_all_result.append(["setting"+str(setting_index)])
+            single_group_all_result.append([SETTING_TITLE[setting_index]])
             
             single_group_single_result=[]
             settings_with_duplicated=[]
