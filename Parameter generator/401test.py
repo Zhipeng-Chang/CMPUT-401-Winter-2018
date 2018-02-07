@@ -6,7 +6,7 @@ import numpy as np
 import math
 # Read below!!!
 
-# Since this code is still a blueprint, so there is not much comment on it
+# Since this code is still a blueprint, there is not much comment on it
 # I will talk about this on Fri with client and see if this approach works
 # If yes, I will add more comment and will make the code nicer 
 
