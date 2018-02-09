@@ -5,6 +5,6 @@
 
 while true; do
 echo 'more stats' 
-docker stats --format "{{.Container}}:{{.NetIO}}" > stats.txt
+docker stats --format "{{.Container}}:{{.BlockIO}}" > stats.txt
 sleep 300 
 done 
