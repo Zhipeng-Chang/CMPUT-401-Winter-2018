@@ -69,6 +69,8 @@ while index_counter < total_file_num:
     File.close()
     index_counter +=1
 
-plt.plot(overall_performance_list)
+x = list(range(0, total_file_num))
+plt.plot(x,overall_performance_list,'b')
+plt.show()
 print(overall_performance_list)
 #print(properties_begin_index,properties_end_index,info_begin_index)
