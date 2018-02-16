@@ -6,6 +6,7 @@
 #This code is under developing, use this as a demo tool and helper in analysis
 # The program can take multiple YCSB output as input generate a plot the show the differnece
 # Usage python3 graphicTool.py number_of_file
+# keep update
 
 from matplotlib import pyplot as plt
 import sys
