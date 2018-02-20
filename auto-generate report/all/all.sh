@@ -12,6 +12,50 @@
 
 # download ycsb
 # in the container
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+ 
+case $key in
+    -m|--memory)
+    MEMORY="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -c|--cpu)
+    CPU="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -b|--blkio)
+    BLKIO="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    # -l|--lib)
+    # LIBPATH="$2"
+    # shift # past argument
+    # shift # past value
+    # ;;
+    # --default)
+    # DEFAULT=YES
+    # shift # past argument
+    # ;;
+    # *)    # unknown option
+    # POSITIONAL+=("$1") # save it in an array for later
+    # shift # past argument
+    # ;;
+esac
+done
+
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+SYSTEM_RESOURCE=${MEMORY}_${CPU}_${BLKIO}
+# echo ${SYSTEM_RESOURCE}
+# exit 1
+
+
 apt-get update
 apt-get install curl
 # obtain the ycsb
@@ -44,7 +88,8 @@ done
 
 
 # give the general report via python file
-python generate_report.py
+python generate_report.py 
+python commit_to_database.py ${MEMORY} ${CPU} ${BLKIO}
 
 # clean up the ycsb
 cqlsh -e "drop table ycsb.usertable;"

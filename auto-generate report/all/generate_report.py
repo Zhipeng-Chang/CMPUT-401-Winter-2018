@@ -13,6 +13,7 @@ fileOrder = ['a','b','c','d','e']
 for i in range(0,5):
 	
 	temp_file_name = "workload_run_output"+fileOrder[i]+".txt"
+	
 
 	files = open(temp_file_name,"r")
 	Line = files.readlines()
@@ -31,11 +32,11 @@ for i in range(0,5):
 
 	test_general_info = []
 	file.write("========================================================\n")
-	write_string = "test_output of "+ temp_file_name + '\n'
+	write_string = "test_output of "+ temp_file_name + " " + fileOrder[i] + '\n' 
 	file.write(write_string)
-	file.write("========================================================\n")
+	
 	if properties_OVERALL_index != None:
-		for i in range(properties_OVERALL_index,End_Indx-1):
+		for i in range(properties_OVERALL_index-1,End_Indx):
 			file.write(Line[i]+"\n")
 
 
