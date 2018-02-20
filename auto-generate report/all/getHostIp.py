@@ -4,12 +4,15 @@
 #
 #
 
+#
+
 
 fileName = open("hostIP.txt","r")
 fileContent = fileName.readlines()
 
 file_length = len(fileContent)
 
-last_len = fileContent[file_length-1].split(" ")
+index = fileContent[5]
+last_len = index.split(" ")
 IP = last_len[2]
 print(IP)
