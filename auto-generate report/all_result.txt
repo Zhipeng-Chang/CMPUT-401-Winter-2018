@@ -1,5 +1,8 @@
-test_output of workload_run_outputa.txt
 ========================================================
+test_output of workload_run_outputa.txt a
+
+[OVERALL], RunTime(ms), 7297.0
+
 [OVERALL], Throughput(ops/sec), 137.04262025489928
 
 [TOTAL_GCS_PS_Scavenge], Count, 5.0
@@ -44,8 +47,12 @@ test_output of workload_run_outputa.txt
 
 [INSERT], 99thPercentileLatency(us), 22191.0
 
-test_output of workload_run_outputb.txt
+[INSERT], Return=OK, 1000
 ========================================================
+test_output of workload_run_outputb.txt b
+
+[OVERALL], RunTime(ms), 7297.0
+
 [OVERALL], Throughput(ops/sec), 137.04262025489928
 
 [TOTAL_GCS_PS_Scavenge], Count, 5.0
@@ -90,8 +97,12 @@ test_output of workload_run_outputb.txt
 
 [INSERT], 99thPercentileLatency(us), 22191.0
 
-test_output of workload_run_outputc.txt
+[INSERT], Return=OK, 1000
 ========================================================
+test_output of workload_run_outputc.txt c
+
+[OVERALL], RunTime(ms), 7297.0
+
 [OVERALL], Throughput(ops/sec), 137.04262025489928
 
 [TOTAL_GCS_PS_Scavenge], Count, 5.0
@@ -136,8 +147,12 @@ test_output of workload_run_outputc.txt
 
 [INSERT], 99thPercentileLatency(us), 22191.0
 
-test_output of workload_run_outputd.txt
+[INSERT], Return=OK, 1000
 ========================================================
+test_output of workload_run_outputd.txt d
+
+[OVERALL], RunTime(ms), 7297.0
+
 [OVERALL], Throughput(ops/sec), 137.04262025489928
 
 [TOTAL_GCS_PS_Scavenge], Count, 5.0
@@ -182,8 +197,12 @@ test_output of workload_run_outputd.txt
 
 [INSERT], 99thPercentileLatency(us), 22191.0
 
-test_output of workload_run_outpute.txt
+[INSERT], Return=OK, 1000
 ========================================================
+test_output of workload_run_outpute.txt e
+
+[OVERALL], RunTime(ms), 7297.0
+
 [OVERALL], Throughput(ops/sec), 137.04262025489928
 
 [TOTAL_GCS_PS_Scavenge], Count, 5.0
@@ -228,3 +247,5 @@ test_output of workload_run_outpute.txt
 
 [INSERT], 99thPercentileLatency(us), 22191.0
 
+[INSERT], Return=OK, 1000
+========================================================

@@ -11,8 +11,9 @@ file = open("all_result.txt", 'w')
 
 fileOrder = ['a','b','c','d','e']
 for i in range(0,5):
+	file_order = fileOrder[i]
+	temp_file_name = "workload_run_output"+file_order+".txt"
 	
-	temp_file_name = "workload_run_output"+fileOrder[i]+".txt"
 
 	files = open(temp_file_name,"r")
 	Line = files.readlines()
@@ -26,16 +27,17 @@ for i in range(0,5):
 			properties_OVERALL_index = Line.index(i)
 
 
-	End_Indx = len(Line)
+	End_Index = len(Line)
 	
 
 	test_general_info = []
 	file.write("========================================================\n")
-	write_string = "test_output of "+ temp_file_name + '\n'
+	write_string = "test_output of "+ temp_file_name + " "+ file_order + "\n"
 	file.write(write_string)
-	file.write("========================================================\n")
+	file.write("\n")
+	
 	if properties_OVERALL_index != None:
-		for i in range(properties_OVERALL_index,End_Indx-1):
+		for i in range(properties_OVERALL_index-1,End_Index):
 			file.write(Line[i]+"\n")
 
 
@@ -43,3 +45,5 @@ for i in range(0,5):
 			temp_line_split = temp_line.split(",")
 
 			test_general_info.append(temp_line_split)
+file.write("========================================================\n")
+file.close()
