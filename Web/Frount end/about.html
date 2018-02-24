@@ -16,12 +16,19 @@ div.h2 {
     padding-left: 15px;
 }
 
+div.h3 {
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
 body { font: 12px Arial;}
 h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
 
 h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
-h3 { background-color: #EEEEEE; height: 400px; border: 0px; border-radius: 5px;padding: 0; margin: 0;}
+h3 { background-color: #EEEEEE; height: 400px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
 
 h4 { background-color: #FAFAFA; height: 60px;border: 0px; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
@@ -53,9 +60,15 @@ path {
     <div class="h1">SmartDeployer</div>
     </h1>
 
-    <h2> <div class = h2>Ranking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result </div> </h2>
+    <h2> <div class = "h2">Ranking &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result </div> </h2>
 
-    <h3> Display the imagine </h3>
+    <h3> 
+        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Currently the default configuration for Cassandra as a NoSQL database is not very good and can be improved. Since many database administrators simply deploy the default configuration regardless of their given architecture, the databases usually aren't very efficient or practical. <br/><br/>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SmartDeployer is an automation tool that will deploy Cassandra via Docker Containers in a smarter way than just the default installation process. Eventually the SmartDeployer will look to optimize the configuration of Cassandra on a given cluster of virtual machines. <br/><br/>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project is aimed at database administrators on distributed linux database servers. With the use of this deployer it will continue to allow them to easily deploy NoSQL databases while maximizing the underlying configuration given their architecture and resources. <br/> </p>
+</div></h3>
 
     <h4> <div class= "h2"> About &nbsp;&nbsp; Help &nbsp;&nbsp;Team </div>
 
