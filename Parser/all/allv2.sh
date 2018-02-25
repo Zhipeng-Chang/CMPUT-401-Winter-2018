@@ -77,7 +77,8 @@ nodetool status ycsb > hostIP.txt
 IP_address="$(python getHostIp.py)"
 
 
-# step 2. generate five report
+
+# step 2. generate standard ycsb report
 declare -a arr=("a" "b" "c" "d" "e")
 for i in "${arr[@]}"
 do
