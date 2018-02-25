@@ -11,5 +11,5 @@ def index(request):
     return render(
         request,
         'team.html',
-        context={},
+        context={}
     )
