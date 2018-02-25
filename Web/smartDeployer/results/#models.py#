@@ -5,6 +5,7 @@ from django.db import models
 class WorkloadA(models.Model):
     workload = models.IntegerField()
     latency = models.FloatField()
+    
 
 class WorkloadB(models.Model):
     workload = models.IntegerField()
@@ -18,7 +19,7 @@ class WorkloadD(models.Model):
     workload = models.IntegerField()
     latency = models.FloatField()
 
-class Environments(models.Model):
+class Experiments(models.Model):
     cpu = models.IntegerField()
     mem = models.IntegerField()
     io = models.IntegerField()

@@ -2,23 +2,23 @@ from django.db import models
 
 # Create your models here.
 
-class Scan(models.Model):
+class WorkloadA(models.Model):
     workload = models.IntegerField()
-    latency = models.IntegerField()
+    latency = models.FloatField()
 
-class Insert(models.Model):
+class WorkloadB(models.Model):
     workload = models.IntegerField()
-    latency = models.IntegerField()
+    latency = models.FloatField()
 
-class Write(models.Model):
+class WorkloadC(models.Model):
     workload = models.IntegerField()
-    latency = models.IntegerField()
+    latency = models.FloatField()
 
-class Update(models.Model):
+class WorkloadD(models.Model):
     workload = models.IntegerField()
-    latency = models.IntegerField()
+    latency = models.FloatField()
 
-class YCSBstats(models.Model):
+class Experiments(models.Model):
     cpu = models.IntegerField()
     mem = models.IntegerField()
     io = models.IntegerField()
