@@ -87,7 +87,10 @@ do
 # or do whatever with individual element of the array
 done
 
-#install mysql-connector
+#install pip and mysql-connector
+apt-get install python-pip
+pip install --allow-external mysql-connector-python mysql-connector-python
+
 # give the general report via python file
 python generate_report.py 
 pip install --allow-external mysql-connector-python mysql-connector-python
