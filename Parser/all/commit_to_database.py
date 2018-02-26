@@ -232,7 +232,7 @@ def main():
 			for i in range(first_index+1,second_index-1):
 				data.append(outputFiles[i])
 			commit_data(data)
-			data.clear()
+			data = []
 
 
 	db.commit()

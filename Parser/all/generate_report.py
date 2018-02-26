@@ -5,7 +5,6 @@
 #
 # note: this script only write the run output
 
-import matplotlib.pyplot as plt
 
 file = open("all_result.txt", 'w')
 
