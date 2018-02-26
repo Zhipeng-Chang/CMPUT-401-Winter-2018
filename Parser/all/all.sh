@@ -58,6 +58,7 @@ SYSTEM_RESOURCE=${MEMORY}_${CPU}_${BLKIO}
 
 apt-get update
 apt-get install curl
+apt-get install python-pip
 # obtain the ycsb
 curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.12.0/ycsb-0.12.0.tar.gz
 tar xfvz ycsb-0.12.0.tar.gz
@@ -89,8 +90,10 @@ done
 #install pip and mysql-connector
 apt-get install python-pip
 pip install --allow-external mysql-connector-python mysql-connector-python
+
 # give the general report via python file
 python generate_report.py 
+pip install --allow-external mysql-connector-python mysql-connector-python
 python commit_to_database.py ${MEMORY} ${CPU} ${BLKIO}
 
 # clean up the ycsb
