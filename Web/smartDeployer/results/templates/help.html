@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> 
+
+.footer {
+  background-color:#FAFAFA;
+  position: fixed;
+  text-align: left;
+  bottom: 0px;
+  left: 5px;
+  right: 5px;
+  height: 30px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+div.h1 {
+    padding-top: 25px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+div.h2 {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+div.h3 {
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+body { font: 12px Arial;}
+h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
+
+h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
+
+h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
+
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+#first{
+    height: 50%;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+</style>
+<body>
+    <body bgcolor=white>
+    <html>
+
+    <h1>
+    <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
+    <div class="h1">SmartDeployer</div>
+    </h1>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A> </div> </h2>
+
+    <h3> 
+        <p> <div class="h3">  <br/><br/>
+
+          This is the help page
+
+        </p>
+    </div></h3>
+
+    <div class="footer">
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
+ 
+    </div>
+
+</body>
+</html>
