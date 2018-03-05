@@ -11,5 +11,5 @@ urlpatterns =[
 	path('', views.index, name='index'),
 	path('team/', views.team, name='team'),
 	path('help/', views.help, name='help'),
-	path('about/', views.about, name='about')
+	path('about/', views.about, name='about'),
 ]
