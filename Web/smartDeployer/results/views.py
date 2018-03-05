@@ -14,3 +14,8 @@ def index(request):
 def team(request):
 	return render(request, 'team.html',context={})
 
+def help(request):
+	return render(request, 'help.html',context={})
+
+def about(request):
+	return render(request, 'about.html',context={})
