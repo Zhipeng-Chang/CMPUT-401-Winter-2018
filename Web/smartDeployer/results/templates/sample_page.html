@@ -1,21 +1,18 @@
-
-
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> 
 
 .footer {
-  background-color:#FAFAFA;
+  background-color:#eee;
   position: fixed;
   text-align: left;
   bottom: 0px;
   left: 5px;
   right: 5px;
-  height: 30px;
+  height: 35px;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 div.h1 {
@@ -26,7 +23,7 @@ div.h1 {
 }
 
 div.h2 {
-    padding-top: 10px;
+    padding-top: 15px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -42,9 +39,9 @@ div.h3 {
 body { font: 12px Arial;}
 h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
 
-h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
+h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
-h3 { background-color: #EEEEEE; height: 625px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
+h3 { background-color: white; height: 600px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
 
 path { 
     stroke: steelblue;
@@ -52,7 +49,7 @@ path {
     fill: none;
 }
 #first{
-    height: 50%;
+    height: 90%;
 }
 
 .axis path,
@@ -63,6 +60,21 @@ path {
     shape-rendering: crispEdges;
 }
 
+.column {
+    float: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 </style>
 <body>
     <body bgcolor=white>
@@ -73,27 +85,47 @@ path {
     <div class="h1">SmartDeployer</div>
     </h1>
 
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
     </h2>
 
     <h3> 
-     <img src="https://raw.githubusercontent.com/Zhipeng-Chang/CMPUT-401-Winter-2018/master/Web/Frount%20end/sample_data_graph.png?token=AePn1LCdEjPmHwfrDlia4-k1MzJ8yBGuks5anaetwA%3D%3D" height=600 width=1000>
 
+    <br>
+
+    <div class="row">
+    </div>
+    <div class="column" style="background-color:#aaa;">
+    <h4><font size="5">The 4 experiments</font></h4>
+    </div>
+    <div class="column" style="background-color:#bbb;">
+    <h4><A HREF="{% url 'workloada'%}"><font size="5">Workload A</font></A> </h4>
+    <p>CPU:1 Memory: 4GB I/O: Disable</p>
+    </div>
+    <div class="column" style="background-color:#ccc;">
+    <h4><A HREF="{% url 'workloadb'%}"><font size="5">Workload B</font></A> </h4>
+    <p>CPU:2 Memory: 8GB I/O: Enable</p>
+    </div>
+    <div class="row">
+    <div class="column" style="background-color:#ddd;">
+    <h4><A HREF="{% url 'workloadc'%}"><font size="5">Workload C</font></A> </h4>
+    <p>CPU:3 Memory: 4GB I/O: Disable</p>
+    </div>
+    <div class="column" style="background-color:#eee;">
+    <h4><A HREF="{% url 'workloadd'%}"><font size="5">Workload D</font></A> </h4>
+    <p>CPU:3 Memory: 4GB I/O: Disable</p>
+    </div>
+    </div>
     </div>
     </h3>
 
-    <h4> <div class= "h2"> About &nbsp;&nbsp; Help &nbsp;&nbsp;Team </div> 
-
-
-</body>
-</html>
-</div>
+    </body>
+    </html>
+    </div>
     </h3>
 
     <div class="footer">
     <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
     </div>
  
-
 </body>
 </html>
