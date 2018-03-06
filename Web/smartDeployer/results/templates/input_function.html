@@ -1,32 +1,24 @@
+<!–– This page is developed to take user inout as function parameter to 
+calculate the overall performance, in case later requriements. The current 
+performace is calculated equally weighted.
+ ––>
 
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> 
 
-.footer_text{
-  background-color:#eee;
+.footer {
+  background-color:#FAFAFA;
   position: fixed;
   text-align: left;
   bottom: 0px;
   left: 5px;
   right: 5px;
-  height: 35px;
+  height: 30px;
   border-radius: 10px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
-
-.footer_white {
-  position: fixed;
-  background-color:white;
-  bottom: 50px;
-  height: 1px;
-    left: 5px;
-  right: 5px;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-
 
 div.h1 {
     padding-top: 25px;
@@ -36,7 +28,7 @@ div.h1 {
 }
 
 div.h2 {
-    padding-top: 15px;
+    padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -52,11 +44,10 @@ div.h3 {
 body { font: 12px Arial;}
 h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
 
-h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
+h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
 h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
 
-h6 { background-color: white; height: 40 px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
 
 path { 
     stroke: steelblue;
@@ -84,31 +75,21 @@ path {
     <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
     <div class="h1">SmartDeployer</div>
     </h1>
-            <h6>
-        <p>
-        
-        </p>
-    </h6>
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
-    </h2>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A> </div> </h2>
 
-<h3> 
-        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How this application works <br/><br/>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. <br/><br/>
+    <h3> 
+        <form action="/team_name_url/" method="post">
+    <label for="team_name">Enter weight parameter 1: </label>
+    <input id="weight1" type="text" name="name_field" value="The weight for parameter 1">
+    <input type="submit" value="OK">
+</form>
 
 </div></h3>
 
-    <footer>
-    <div class="footer_white">   
-        <p> 
-        </br>
-        </p>
-          </div>
-    <div class="footer_text">   
+    <div class="footer">
     <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
     </div>
-    </footer>
 
 </body>
 </html>
