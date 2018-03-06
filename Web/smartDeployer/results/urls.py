@@ -12,4 +12,8 @@ urlpatterns =[
 	path('team/', views.team, name='team'),
 	path('help/', views.help, name='help'),
 	path('about/', views.about, name='about'),
+	path('workloada/', views.workloada, name='workloada'),
+	path('workloadb/', views.workloadb, name='workloadb'),
+	path('workloadc/', views.workloadc, name='workloadc'),
+	path('workloadd/', views.workloadd, name='workloadd')
 ]

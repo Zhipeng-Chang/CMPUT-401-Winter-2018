@@ -19,3 +19,15 @@ def help(request):
 
 def about(request):
 	return render(request, 'about.html',context={})
+
+def workloada(request):
+	return render(request, 'workloada.html',context={})
+
+def workloadb(request):
+	return render(request, 'workloadb.html',context={})
+
+def workloadc(request):
+	return render(request, 'workloadc.html',context={})
+
+def workloadd(request):
+	return render(request, 'workloadd.html',context={})
