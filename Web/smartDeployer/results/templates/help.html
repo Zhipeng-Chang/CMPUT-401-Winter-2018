@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> 
@@ -44,7 +42,8 @@ h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;pad
 
 h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
-h3 { background-color: #EEEEEE; height: 625px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
+h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
+
 
 path { 
     stroke: steelblue;
@@ -72,28 +71,19 @@ path {
     <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
     <div class="h1">SmartDeployer</div>
     </h1>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A> </div> </h2>
 
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
-    </h2>
+<h3> 
+        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How this application works <br/><br/>
 
-    <h3> 
-     <img src="https://raw.githubusercontent.com/Zhipeng-Chang/CMPUT-401-Winter-2018/master/Web/Frount%20end/sample_data_graph.png?token=AePn1LCdEjPmHwfrDlia4-k1MzJ8yBGuks5anaetwA%3D%3D" height=600 width=1000>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. <br/><br/>
 
-    </div>
-    </h3>
-
-    <h4> <div class= "h2"> About &nbsp;&nbsp; Help &nbsp;&nbsp;Team </div> 
-
-
-</body>
-</html>
-</div>
-    </h3>
+</div></h3>
 
     <div class="footer">
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
-    </div>
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
  
+    </div>
 
 </body>
 </html>

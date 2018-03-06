@@ -42,7 +42,7 @@ h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;pad
 
 h2 { background-color: #FAFAFA; height: 40px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
 
-h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
+h3 { background-color: #EEEEEE; height: 10; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
 
 
 path { 
@@ -72,31 +72,16 @@ path {
     <div class="h1">SmartDeployer</div>
     </h1>
     <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Ranking</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'index'%}"><font size="5">Result</font></A> </div> </h2>
-
     <h3> 
-        <p> <div class="h3"> Client: <br/><br/>
+        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Currently the default configuration for Cassandra as a NoSQL database is not very good and can be improved. Since many database administrators simply deploy the default configuration regardless of their given architecture, the databases usually aren't very efficient or practical. <br/><br/>
 
-Hamzeh Khazaei:<br/> hamzeh.khazaei@ualberta.ca <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SmartDeployer is an automation tool that will deploy Cassandra via Docker Containers in a smarter way than just the default installation process. Eventually the SmartDeployer will look to optimize the configuration of Cassandra on a given cluster of virtual machines. And the project would also include a web-based visualization tool, which will read the benchmark and output as graph. <br/><br/>
 
-Team Members:<br/><br/>
-
-Nick Anic: <br/>nanic@ualberta.ca<br/><br/>
-
-Xuan Cao: <br/> xcao2@ualberta.ca<br/><br/>
-
-Zhipeng Chang:<br/> zchang@ualberta.ca<br/><br/>
-
-Yuan Feng:<br/> yfeng3@ualberta.ca<br/><br/>
-
-TA:<br/><br/>
-
-Diego Serrano:<br/> serranos@ualberta.ca<br/><br/>
-
- </p>
-</div></h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project is aimed at database administrators on distributed linux database servers. With the use of this deployer it will continue to allow them to easily deploy NoSQL databases while maximizing the underlying configuration given their architecture and resources. <br/> </p>
+    </div></h3>
 
     <div class="footer">
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
     </div>
 
 </body>
