@@ -16,18 +16,6 @@
   padding-top: 15px;
 }
 
-.footer_white {
-  position: fixed;
-  background-color:white;
-  bottom: 50px;
-  height: 1px;
-    left: 5px;
-  right: 5px;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-
-
 div.h1 {
     padding-top: 25px;
     padding-right: 10px;
@@ -92,23 +80,25 @@ path {
     <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
     </h2>
 
-<h3> 
-        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How this application works <br/><br/>
+    <h3> 
+        <p> <div class="h3"> <font size="4">
+        How this application works <br/><br/>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. <br/><br/>
+        The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. <br/>It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. 
+        <br/>
+        <br/>
+        License:
+        <br/>
+        Copyright 2018 CMPUT 401 SmartDeployer Team. All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a copy of the license in this project. Otherwise please contact us directly.
 
-</div></h3>
+      </font><br/><br/>
 
-    <footer>
-    <div class="footer_white">   
-        <p> 
-        </br>
-        </p>
-          </div>
+    </div></h3>
+
+
     <div class="footer_text">   
     <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
     </div>
-    </footer>
 
 </body>
 </html>
