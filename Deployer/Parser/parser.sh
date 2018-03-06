@@ -12,10 +12,21 @@
 
 # download ycsb
 # in the container
+
+
+
+# development mode is default OFF
+DEVEMODE="OFF"
+
+
+
+
+
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
 key="$1"
+
  
 case $key in
     -m|--memory)
@@ -30,6 +41,11 @@ case $key in
     ;;
     -b|--blkio)
     BLKIO="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -d|--devMode)
+    DEVEMODE="$2"
     shift # past argument
     shift # past value
     ;;
@@ -55,19 +71,33 @@ SYSTEM_RESOURCE=${MEMORY}_${CPU}_${BLKIO}
 # echo ${SYSTEM_RESOURCE}
 # exit 1
 
+function setup{
 
-apt-get update
-apt-get install curl
-apt-get install python-pip
-# obtain the ycsb
-curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.12.0/ycsb-0.12.0.tar.gz
-tar xfvz ycsb-0.12.0.tar.gz
-rm ycsb-0.12.0.tar.gz
+    apt-get update
+    apt-get install curl
+    apt-get install python-pip
+    # obtain the ycsb
+    curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.12.0/ycsb-0.12.0.tar.gz
+    tar xfvz ycsb-0.12.0.tar.gz
+    rm ycsb-0.12.0.tar.gz
+
+    #install pip and mysql-connector  and  give the general report via python file
+    pip install --allow-external mysql-connector-python mysql-connector-python
+}
+
+if ["$DEVEMODE"=="ON"];then
+    echo "development mode is on"
+    setup
+    echo "setup done..."
+fi
+
+
+
 
 
 # set_up the ycsb
 cqlsh -e "create keyspace if not exists ycsb WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 };"
-cqlsh -e "create table ycsb.usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar) with compression = {'sstable_compression': ''};"
+cqlsh -e "create table if not exists ycsb.usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar) with compression = {'sstable_compression': ''};"
 
 
 # step 1. get the ip address
@@ -78,30 +108,34 @@ nodetool status ycsb > hostIP.txt
 IP_address="$(python getHostIp.py)"
 
 
+# load data
+./ycsb-0.12.0/bin/ycsb load cassandra-cql -p hosts=${IP_address} -P ./ycsb-0.12.0/workloads/workloada -s > ../workload_load_outputa.txt
 # step 2. generate five report
-declare -a arr=("a" "b" "c" "d" "e")
+
+declare -a arr=("a" "b" "c" "f" "d")
 for i in "${arr[@]}"
 do
-./ycsb-0.12.0/bin/ycsb load cassandra-cql -p hosts=${IP_address} -P ./ycsb-0.12.0/workloads/workload${i} -s > ../workload_load_output${i}.txt
 ./ycsb-0.12.0/bin/ycsb run  cassandra-cql -p hosts=${IP_address} -P ./ycsb-0.12.0/workloads/workload${i} -s > ../workload_run_output${i}.txt
 # or do whatever with individual element of the array
 done
 
-#install pip and mysql-connector
-apt-get install python-pip
-pip install --allow-external mysql-connector-python mysql-connector-python
+#remove all data in table
+cqlsh -e "TRUNCATE ycsb.usertable;"
+#for rest of workload
+# load workloade
+./ycsb-0.12.0/bin/ycsb load cassandra-cql -p hosts=${IP_address} -P ./ycsb-0.12.0/workloads/workloade -s > ../workload_load_outpute.txt
 
-# give the general report via python file
+./ycsb-0.12.0/bin/ycsb run  cassandra-cql -p hosts=${IP_address} -P ./ycsb-0.12.0/workloads/workloade -s > ../workload_run_outpute.txt
+
+
 python generate_report.py 
-pip install --allow-external mysql-connector-python mysql-connector-python
 python commit_to_database.py ${MEMORY} ${CPU} ${BLKIO}
 
 # clean up the ycsb
-cqlsh -e "drop table ycsb.usertable;"
+cqlsh -e "TRUNCATE ycsb.usertable;"
 
+rm *.txt
 echo "finished"
 exit 1
-
-
 
 
