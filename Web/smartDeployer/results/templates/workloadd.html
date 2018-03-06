@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <style> 
 
-.footer_text{
+.footer {
   background-color:#eee;
   position: fixed;
   text-align: left;
@@ -15,18 +15,6 @@
   padding-left: 15px;
   padding-top: 15px;
 }
-
-.footer_white {
-  position: fixed;
-  background-color:white;
-  bottom: 50px;
-  height: 1px;
-    left: 5px;
-  right: 5px;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-
 
 div.h1 {
     padding-top: 25px;
@@ -56,7 +44,6 @@ h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padd
 
 h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
 
-h6 { background-color: white; height: 40 px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
 
 path { 
     stroke: steelblue;
@@ -84,31 +71,21 @@ path {
     <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
     <div class="h1">SmartDeployer</div>
     </h1>
-            <h6>
-        <p>
-        
-        </p>
-    </h6>
     <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
     </h2>
 
-<h3> 
-        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How this application works <br/><br/>
+    <h3> 
+        <p> <div class="h3">  <br/><br/>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. <br/><br/>
+          This is the workloadD page
 
-</div></h3>
-
-    <footer>
-    <div class="footer_white">   
-        <p> 
-        </br>
         </p>
-          </div>
-    <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
+    </div></h3>
+
+    <div class="footer">
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
+ 
     </div>
-    </footer>
 
 </body>
 </html>
