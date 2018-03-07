@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <style> 
 
-.footer_text{
+.footer {
   background-color:#eee;
   position: fixed;
   text-align: left;
@@ -44,7 +44,8 @@ h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padd
 
 h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
 
-h6 { background-color: white; height: 40 px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
+h6 { background-color: white; height: 80; border: 0px; border-radius: 10px;padding: 0; margin: 0; font-weight: normal;} 
+
 
 path { 
     stroke: steelblue;
@@ -72,32 +73,22 @@ path {
     <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
     <div class="h1">SmartDeployer</div>
     </h1>
-            <h6>
-        <p>
-        
-        </p>
+    <h6>
+        <p></p>
     </h6>
     <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
     </h2>
 
     <h3> 
-        <p> <div class="h3"> <font size="4">
-        How this application works <br/><br/>
+        <p> <div class="h3">  <br/><br/>
 
-        The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. <br/>It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. 
-        <br/>
-        <br/>
-        License:
-        <br/>
-        Copyright 2018 CMPUT 401 SmartDeployer Team. All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a copy of the license in this project. Otherwise please contact us directly.
+          This is the workloadA page
 
-      </font><br/><br/>
-
+        </p>
     </div></h3>
 
-
-    <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
+    <div class="footer">
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
     </div>
 
 </body>
