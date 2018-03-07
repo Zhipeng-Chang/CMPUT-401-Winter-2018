@@ -91,7 +91,7 @@ path {
         <p></p>
     </h6>
 
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> </h2>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> </h2>
 
     <h6>
         <p></p>
@@ -100,24 +100,28 @@ path {
     <h3> 
     <div class="row"></div>
     <div class="column" style="background-color:#aaa;">
-    <h4><font size="5">The 4 experiments</font></h4>
+    <h4><font size="5">The 3 experiments</font></h4>
+    <p>- Experiment 1: 4 VCPU'S 8 GB RAM for 1 container<br>
+    - Experiment 2: 2 VCPU'S 4 GB RAM for 2 containers<br>
+    - Experiment 3: 1 VCPU'S 2 GB RAM for 4 containers<br>
+    </p>
     </div>
     <div class="column" style="background-color:#bbb;">
-    <h4><A HREF="{% url 'workloada'%}"><font size="5">Workload A</font></A> </h4>
-    <p>CPU:1 Memory: 4GB I/O: Disable</p>
+    <h4><A HREF="{% url 'workloada'%}"><font size="4">Workload A: Update heavy workload</font></A> </h4>
+    <p>This workload has a mix of 50/50 reads and writes</p>
     </div>
     <div class="column" style="background-color:#ccc;">
-    <h4><A HREF="{% url 'workloadb'%}"><font size="5">Workload B</font></A> </h4>
-    <p>CPU:2 Memory: 8GB I/O: Enable</p>
+    <h4><A HREF="{% url 'workloadb'%}"><font size="4">Workload B: Read mostly workload</font></A> </h4>
+    <p>This workload has a 95/5 reads/write mix.</p>
     </div>
     <div class="row">
     <div class="column" style="background-color:#ddd;">
-    <h4><A HREF="{% url 'workloadc'%}"><font size="5">Workload C</font></A> </h4>
-    <p>CPU:3 Memory: 4GB I/O: Disable</p>
+    <h4><A HREF="{% url 'workloadc'%}"><font size="4">Workload C: Read only</font></A> </h4>
+    <p>This workload is 100% read.</p>
     </div>
     <div class="column" style="background-color:#eee;">
-    <h4><A HREF="{% url 'workloadd'%}"><font size="5">Workload D</font></A> </h4>
-    <p>CPU:3 Memory: 4GB I/O: Disable</p>
+    <h4><A HREF="{% url 'workloadd'%}"><font size="4">Workload D: Read latest workload</font></A> </h4>
+    <p>New records are inserted, and the most recently inserted records are the most popular.</p>
     </div>
     </h3>
 
