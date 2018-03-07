@@ -1,6 +1,12 @@
-
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from .models import WorkloadA, WorkloadB, WorkloadC, WorkloadD, Experiments
+
+from graphos.sources.simple import SimpleDataSource
+from graphos.renderers.gchart import LineChart
+
+
+
 
 # Create your views here.
 
@@ -12,16 +18,37 @@ def index(request):
     return render(request, 'sample_page.html',context={})
 
 def team(request):
-	return render(request, 'team.html',context={})
+    return render(request, 'team.html',context={})
 
 def help(request):
-	return render(request, 'help.html',context={})
+    return render(request, 'help.html',context={})
 
 def about(request):
-	return render(request, 'about.html',context={})
+    return render(request, 'about.html',context={})
 
 def workloada(request):
-	return render(request, 'workloada.html',context={})
+    num_elements = WorkloadA.objects.all().count()
+    
+
+#    return render(request, 'workloada.html',context={})
+
+    data =  [
+        ['Year', 'Sales', 'Expenses'],
+        [2004, 1000, 400],
+        [2005, 1170, 460],
+        [2006, 660, 1120],
+        [2007, 1030, 540]
+        ]
+    # DataSource object
+    data_source = SimpleDataSource(data=data)
+    # Chart object
+    chart = LineChart(data_source)
+    context = {'chart': chart}
+    return render(request, 'workloada.html', context)
+
+
+
+
 
 def workloadb(request):
 	return render(request, 'workloadb.html',context={})
