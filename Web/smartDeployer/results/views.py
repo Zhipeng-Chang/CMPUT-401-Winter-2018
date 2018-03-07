@@ -37,15 +37,35 @@ def workloada(request):
     context = {'chart': chart}
     return render(request, 'workloada.html', context)
 
-
-
-
-
 def workloadb(request):
-	return render(request, 'workloadb.html',context={})
+    data = WorkloadB.objects.all()
+
+    # DataSource object                                                                                                
+    data_source = ModelDataSource(data, ['workload', 'latency'])
+
+    # Chart object                                                                                                    
+    chart = LineChart(data_source)
+    context = {'chart': chart}
+    return render(request, 'workloadb.html', context)
 
 def workloadc(request):
-	return render(request, 'workloadc.html',context={})
+    data = WorkloadC.objects.all()
+
+    # DataSource object                                                                                               
+    data_source = ModelDataSource(data, ['workload', 'latency'])
+
+    # Chart object                                                                                                  
+    chart = LineChart(data_source)
+    context = {'chart': chart}
+    return render(request, 'workloadc.html', context)
 
 def workloadd(request):
-	return render(request, 'workloadd.html',context={})
+    data = WorkloadD.objects.all()
+
+    # DataSource object                                                                                           
+    data_source = ModelDataSource(data, ['workload', 'latency'])
+
+    # Chart object                                                                                                 
+    chart = LineChart(data_source)
+    context = {'chart': chart}
+    return render(request, 'workloadd.html', context)
