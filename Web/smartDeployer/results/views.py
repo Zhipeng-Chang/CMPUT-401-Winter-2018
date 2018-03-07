@@ -4,7 +4,7 @@ from .models import WorkloadA, WorkloadB, WorkloadC, WorkloadD, Experiments
 
 from graphos.sources.simple import SimpleDataSource
 from graphos.renderers.gchart import LineChart
-
+from graphos.sources.model import ModelDataSource
 
 
 
@@ -27,20 +27,11 @@ def about(request):
     return render(request, 'about.html',context={})
 
 def workloada(request):
-    num_elements = WorkloadA.objects.all().count()
+    data = WorkloadA.objects.all()
     
-
-#    return render(request, 'workloada.html',context={})
-
-    data =  [
-        ['Year', 'Sales', 'Expenses'],
-        [2004, 1000, 400],
-        [2005, 1170, 460],
-        [2006, 660, 1120],
-        [2007, 1030, 540]
-        ]
     # DataSource object
-    data_source = SimpleDataSource(data=data)
+    data_source = ModelDataSource(data, ['workload', 'latency'])
+
     # Chart object
     chart = LineChart(data_source)
     context = {'chart': chart}
