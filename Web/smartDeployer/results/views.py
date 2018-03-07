@@ -33,7 +33,11 @@ def workloada(request):
     data_source = ModelDataSource(data, ['workload', 'latency'])
 
     # Chart object
-    chart = LineChart(data_source, options={'title': 'Workload A'})
+    chart = LineChart(data_source, 
+                      options={'title': 'Workload A', 
+                               'hAxis': {'title': 'Throughput / sec'}, 
+                               'vAxis': {'title': 'Average Latency'}
+                               })
     context = {'chart': chart}
     return render(request, 'workloada.html', context)
 
@@ -44,7 +48,11 @@ def workloadb(request):
     data_source = ModelDataSource(data, ['workload', 'latency'])
 
     # Chart object                                                                                                    
-    chart = LineChart(data_source, options={'title': 'Workload B'})
+    chart = LineChart(data_source,
+                      options={'title': 'Workload B',
+                               'hAxis': {'title': 'Throughput / sec'},
+                               'vAxis': {'title': 'Average Latency'}
+                               })
     context = {'chart': chart}
     return render(request, 'workloadb.html', context)
 
@@ -55,7 +63,11 @@ def workloadc(request):
     data_source = ModelDataSource(data, ['workload', 'latency'])
 
     # Chart object                                                                                                  
-    chart = LineChart(data_source, options={'title': 'Workload C'})
+    chart = LineChart(data_source,
+                      options={'title': 'Workload C',
+                               'hAxis': {'title': 'Throughput / sec'},
+                               'vAxis': {'title': 'Average Latency'}
+                               })
     context = {'chart': chart}
     return render(request, 'workloadc.html', context)
 
@@ -66,6 +78,10 @@ def workloadd(request):
     data_source = ModelDataSource(data, ['workload', 'latency'])
 
     # Chart object                                                                                                 
-    chart = LineChart(data_source, options={'title': 'Workload D'})
+    chart = LineChart(data_source,
+                      options={'title': 'Workload D',
+                               'hAxis': {'title': 'Throughput / sec'},
+                               'vAxis': {'title': 'Average Latency'}
+                               })
     context = {'chart': chart}
     return render(request, 'workloadd.html', context)
