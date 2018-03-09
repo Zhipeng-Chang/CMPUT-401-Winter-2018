@@ -1,7 +1,7 @@
 ## Usage:
 1. run script:
 ```
-$./all.sh -m {container memory} -c {container cpu} -b {container blockI/O}
+$./parser.sh -m {container memory} -c {container cpu} -b {container blockI/O}
 ```
 1.1 get all standard ycsb test report (no multiple threads) from five workload
 1.2 put them all together in one file
