@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> 
-
 .footer_text{
   background-color:#eee;
   position: fixed;
@@ -15,37 +13,39 @@
   padding-left: 15px;
   padding-top: 15px;
 }
-
+.footer_white {
+  position: fixed;
+  background-color:white;
+  bottom: 50px;
+  height: 1px;
+    left: 5px;
+  right: 5px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
 div.h1 {
     padding-top: 25px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
 }
-
 div.h2 {
     padding-top: 15px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
 }
-
 div.h3 {
     padding-top: 10px;
     padding-right: 100px;
     padding-bottom: 10px;
     padding-left: 15px;
 }
-
 body { font: 12px Arial;}
 h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
-
 h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
-
 h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
-
 h6 { background-color: white; height: 40 px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
-
 path { 
     stroke: steelblue;
     stroke-width: 2;
@@ -54,7 +54,6 @@ path {
 #first{
     height: 50%;
 }
-
 .axis path,
 .axis line {
     fill: none;
@@ -62,7 +61,6 @@ path {
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
-
 </style>
 <body>
     <body bgcolor=white>
@@ -77,28 +75,26 @@ path {
         
         </p>
     </h6>
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> 
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Result</font></A>  </div> 
     </h2>
 
-    <h3> 
-        <p> <div class="h3"> <font size="4">
-        How this application works <br/><br/>
+<h3> 
+        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How this application works <br/><br/>
 
-        The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. <br/>It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. 
-        <br/>
-        <br/>
-        License:
-        <br/>
-        Copyright 2018 CMPUT 401 SmartDeployer Team. All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a copy of the license in this project. Otherwise please contact us directly.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project has two components: the deployer and the web application. The deployer will automaticlly installing the container and run the YCSB benchmark. It then output the YCSB result into a database. The web application will read from the database to show the result graphiccally using browser. <br/><br/>
 
-      </font><br/><br/>
+</div></h3>
 
-    </div></h3>
-
-
+    <footer>
+    <div class="footer_white">   
+        <p> 
+        </br>
+        </p>
+          </div>
     <div class="footer_text">   
     <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
     </div>
+    </footer>
 
 </body>
 </html>

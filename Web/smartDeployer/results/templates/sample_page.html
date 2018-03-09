@@ -14,6 +14,16 @@
   padding-left: 15px;
   padding-top: 15px;
 }
+.footer_white {
+  position: fixed;
+  background-color:white;
+  bottom: 50px;
+  height: 1px;
+    left: 5px;
+  right: 5px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
 
 div.h1 {
     padding-top: 25px;
@@ -126,9 +136,16 @@ path {
     </h3>
 
 
-
+    <footer>
+    <div class="footer_white">   
+        <p> 
+        </br>
+        </p>
+          </div>
     <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A></div>
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
+    </div>
+    </footer>
     
 </body>
 </html>
