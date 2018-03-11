@@ -1,14 +1,30 @@
-import unittest
+from django.test import TestCase, RequestFactory, Client
+from django.urls import reverse
 
-class TestBasic(unittest.TestCase):
-    "Basic tests"
+from .views import *
 
-    def test_get(self):
-        """hello view actually tells 'Hello'."""
-        # Setup.
-        request = 'fake request'
-        # Run.
-        response = views.team(request)
-        # Check.
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.content, {})
+class MyTests(TestCase):
+	def setUp(self):
+		self.client = Client()
+	def test_main_page(self):
+		url = reverse('index')
+		response = self.client.get(url)
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'Results')
+
+
+	def test_team_page(self):
+		request = 'fake request'
+		response = team(request)
+		self.assertEqual(response.status_code, 200)
+
+
+	def test_about_page(self):
+		request = 'fake request'
+		response = about(request)
+		self.assertEqual(response.status_code, 200)
+
+	def test_help_page(self):
+		request = 'fake request'
+		response = help(request)
+		self.assertEqual(response.status_code, 200)
