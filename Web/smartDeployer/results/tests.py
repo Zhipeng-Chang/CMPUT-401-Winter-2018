@@ -19,8 +19,7 @@ class MainTests(TestCase):
 
 
 	def test_team_page(self):
-		request_factory = RequestFactory()
-		request = request_factory.post('/fake-path', data={'name': u'Waldo'})
+		request = 'fake request'
 		response = team(request)
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, 'Zhipeng')
