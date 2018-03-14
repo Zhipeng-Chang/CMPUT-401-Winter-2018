@@ -54,8 +54,8 @@ class MainTests(TestCase):
 		response = self.client.get('http://127.0.0.1:8000/results/workloadd')
 		self.assertContains(response, '', status_code=301)
 
-	def test_graph_wrong_page(self): # test on request wrong page
+	def test_graph_wrong_page(self): 
 		response = self.client.get('http://127.0.0.1:8000/results/workloade')
-		self.assertEqual(response.status_code=404)
+		self.assertContains(response, '', status_code=404)
 
 
