@@ -5,6 +5,20 @@
 
 total_tests=0
 passed_tests=0
+
+# check network #source:https://stackoverflow.com/questions/17291233/how-to-check-internet-access-using-bash-script-in-linux
+((total_tests+=1))
+wget -q --tries=10 --timeout=20 --spider http://google.com
+if [[ $? -eq 0 ]]; then
+((passed_tests+=1))
+echo "Online"
+else
+echo "Offline"
+fi
+
+
+
+
 # first check if docker installed
 docker -v
 output=$(echo $?)
