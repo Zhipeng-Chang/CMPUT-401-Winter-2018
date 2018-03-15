@@ -26,6 +26,11 @@ for i in "${ADDR[@]}";
     # process "$i"
     done
 
+
+if [ "${total_ip}" -le 0 ]; then
+    echo "uninstallation done"
+    exit 1
+
 for i in $input_ip;
 	do
 		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo systemctl stop docker "
