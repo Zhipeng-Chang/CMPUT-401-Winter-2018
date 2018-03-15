@@ -15,4 +15,4 @@ Uninstallation:
 
 
 Note: cluster deploy file will be added later
-Note: if you encounter "sudo host not found" in any of your vm, please see [Deployer](https://github.com/Zhipeng-Chang/CMPUT-401-Winter-2018/tree/master/Deployer) README.md
+Note: if you see "sudo unable to resolve host" in any of your vm, please see [Deployer](https://github.com/Zhipeng-Chang/CMPUT-401-Winter-2018/tree/master/Deployer) README.md
