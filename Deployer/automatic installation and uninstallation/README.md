@@ -14,5 +14,5 @@ Uninstallation:
 2. run uninstall.sh ```$ ./uninstall.sh ```
 
 
-Note: cluster deploy file will be added later
+Note: cluster deploy file will be added later<br/>
 Note: if you see "sudo unable to resolve host" in any of your vm, please see [Deployer](https://github.com/Zhipeng-Chang/CMPUT-401-Winter-2018/tree/master/Deployer) README.md
