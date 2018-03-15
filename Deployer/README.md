@@ -1,6 +1,8 @@
 Description:
 
-This script file automatically install docker and setup numbers of docker containers for user
+This script file automatically install docker and setup numbers of docker containers for user <br/>
+For automatic creating cluster, please see the folder "automatic installation and uninstallation" <br/>
+For automatic removing docker, please see the folder "automatic installation and uninstallation"
 
 
 Software requirement:
