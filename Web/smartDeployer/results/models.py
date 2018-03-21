@@ -6,6 +6,9 @@ class WorkloadA(models.Model):
     workload = models.IntegerField()
     latency = models.FloatField()
 
+    def __str__(self):
+        return self.workload
+
 class WorkloadB(models.Model):
     workload = models.IntegerField()
     latency = models.FloatField()
