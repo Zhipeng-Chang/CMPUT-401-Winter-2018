@@ -35,7 +35,7 @@ echo "Incorrect JAVA version "
 fi
 echo ""
 
-# check JAVA
+# check python
 ((total_tests+=1))
 python --version &> /dev/null
 output=$(echo $?) &> /dev/null
