@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graphos',
+    'django_popup_view_field',
 ]
 
 MIDDLEWARE = [
