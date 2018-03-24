@@ -16,14 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import url
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    #add popup
-    url(
-        r'^django_popup_view_field/',
-        include('django_pop_up_view_field.urls', namespace="django_popup_view_field")
-        ),
 ]
 
 # Use include() to add paths from the catalog application 
