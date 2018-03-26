@@ -1,8 +1,17 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
 <!DOCTYPE html>
 <meta charset="utf-8">
+
+<!- keep the head to import bootstrap lib ->
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<!- keep the head to import bootstrap lib ->
+
 <style> 
 
 .footer_text{
@@ -110,7 +119,9 @@ path {
     </p>
     </div>
     <div class="column" style="background-color:#bbb;">
-    <h4><A HREF="{% url 'workloada'%}"><font size="4">Workload A: Update heavy workload</font></A> </h4>
+    <h4><A HREF="{% url 'workloada'%}"><font size="4">Workload A: Update heavy workload</font></A> 
+        <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Workload A: Update heavy workload</button></p>
+    </h4>
     <p>This workload has a mix of 50/50 reads and writes</p>
     </div>
     <div class="column" style="background-color:#ccc;">
@@ -128,10 +139,11 @@ path {
     </div>
     </h3>
 
-
+<!- this is the popup->
     <div>
     <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Display List</button></p>
 	</div>
+
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -152,7 +164,7 @@ path {
 
   </div>
 </div>
-
+<!- this is the popup ->
 
     <div class="footer_text">   
     <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
