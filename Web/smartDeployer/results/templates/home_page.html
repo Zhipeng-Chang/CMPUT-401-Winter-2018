@@ -124,27 +124,41 @@ path {
     </h4>
     <p>This workload has a mix of 50/50 reads and writes</p>
     </div>
+
     <div class="column" style="background-color:#ccc;">
-    <h4><A HREF="{% url 'workloadb'%}"><font size="4">Workload B: Read mostly workload</font></A> 
-        <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Workload B: Read mostly workload</button></p>
+
+            <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloadb'%}"  data-toggle="modal" data-target="#myModalA"id="display_list"><font size="4">Workload B: Read mostly workload</font></button></p>
+ 
     </h4>
+
     <p>This workload has a 95/5 reads/write mix.</p>
     </div>
-    <div class="row">
+
     <div class="column" style="background-color:#ddd;">
-    <h4><A HREF="{% url 'workloadc'%}"><font size="4">Workload C: Read only</font></A> 
-        <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Workload C: Read only</button></p>
+
+
+            <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloadc'%}"  data-toggle="modal" data-target="#myModalA"id="display_list"><font size="4">Workload C: Read only</font></button></p>
+ 
     </h4>
+
     <p>This workload is 100% read.</p>
     </div>
     <div class="column" style="background-color:#eee;">
-    <h4><A HREF="{% url 'workloadd'%}"><font size="4">Workload D: Read latest workload</font></A> 
-        <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Workload D: Read latest workload</button></p>
+
+                 <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloadd'%}"  data-toggle="modal" data-target="#myModalA"id="display_list"><font size="4">Workload D: Read latest workload</font></button></p>
+ 
     </h4>
+
     <p>New records are inserted, and the most recently inserted records are the most popular.</p>
     </div>
     </h3>
 
+    <div class="footer_text">   
+    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
+    </div>
+    
+</body>
+</html>
 
 <!- this is the popup content need to work on show graph->
 <!-- Modal -->
@@ -179,9 +193,3 @@ path {
 </div>
 <!- this is the popup ->
 
-    <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
-    </div>
-    
-</body>
-</html>
