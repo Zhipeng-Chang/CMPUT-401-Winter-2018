@@ -3,7 +3,7 @@
 
 <!- keep the head to import bootstrap lib ->
 <head>
-  <title>Bootstrap Example</title>
+  <title>Smart Deployer Home Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -119,8 +119,8 @@ path {
     </p>
     </div>
     <div class="column" style="background-color:#bbb;">
-    <h4><A HREF="{% url 'workloada'%}"><font size="4">Workload A: Update heavy workload</font></A> 
-        <p><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal"id="display_list">Workload A: Update heavy workload</button></p>
+      <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloada'%}"  data-toggle="modal" data-target="#myModalA"id="display_list"><font size="4">Workload A: Update heavy workload</font></button></p>
+ 
     </h4>
     <p>This workload has a mix of 50/50 reads and writes</p>
     </div>
@@ -146,6 +146,16 @@ path {
     </h3>
 
 
+<!- this is the popup content need to work on show graph->
+<!-- Modal -->
+<div class="modal fade text-center" id="myModalA">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<!- this is the popup ->
 
 <!- this is the popup content need to work on show graph->
 <!-- Modal -->
