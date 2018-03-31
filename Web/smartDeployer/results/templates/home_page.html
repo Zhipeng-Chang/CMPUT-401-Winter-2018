@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});</script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <!- keep the head to import bootstrap lib ->
 <head>
@@ -14,6 +19,11 @@
 
 <style> 
 
+
+.modal-content {
+  overflow:auto;
+}
+
 .footer_text{
   background-color:#eee;
   position: fixed;
@@ -24,7 +34,7 @@
   height: 35px;
   border-radius: 10px;
   padding-left: 15px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 div.h1 {
@@ -48,7 +58,7 @@ div.h3 {
     padding-left: 15px;
 }
 
-body { font: 12px Arial;}
+body { font: 8px Arial;}
 h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 10px;padding: 0; margin: 0;}
 
 h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 10px;padding: 0; margin: 0; font: 20px Arial;}
@@ -119,7 +129,9 @@ path {
     </p>
     </div>
     <div class="column" style="background-color:#bbb;">
-      <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloada'%}"  data-toggle="modal" data-target="#myModalA"id="display_list"><font size="4">Workload A: Update heavy workload</font></button></p>
+      <h4><A HREF="{% url 'workloada'%}"><font size="4">Workload A: Update heavy workload</font></A> </h4>
+      <h4><p><button class="btn btn-primary" type="button" href="{% url 'workloada'%}" data-toggle="modal" data-target="#myModalA"><font size="4">Workload A: Update heavy workload</font></button></p>
+
  
     </h4>
     <p>This workload has a mix of 50/50 reads and writes</p>
@@ -153,23 +165,49 @@ path {
     </div>
     </h3>
 
-    <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
-    </div>
+
     
 </body>
+    <div class="footer_text">   
+    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size="5">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size="5">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size="5">Team</font></A>  
+    </div>
 </html>
+
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalA" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
+
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalteam" class="modal fade bd-example-modal-lg">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
 
 <!- this is the popup content need to work on show graph->
 <!-- Modal -->
-<div class="modal fade text-center" id="myModalA">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div id="myModalabout" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
     </div>
-  </div>
 </div>
 
-<!- this is the popup ->
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalhelp" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
 
 <!- this is the popup content need to work on show graph->
 <!-- Modal -->
