@@ -1,9 +1,25 @@
-
 <!DOCTYPE html>
 <meta charset="utf-8">
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});</script>
+
+<!- keep the head to import bootstrap lib ->
+<head>
+  <title>Smart Deployer Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<!- keep the head to import bootstrap lib ->
+
 <style> 
 
-.footer {
+
+.footer_text{
   background-color:#eee;
   position: fixed;
   text-align: left;
@@ -13,9 +29,8 @@
   height: 35px;
   border-radius: 10px;
   padding-left: 15px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
-
 div.h1 {
     padding-top: 25px;
     padding-right: 10px;
@@ -79,18 +94,57 @@ path {
     <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> 
     </h2>
 
+<div id="container">
 
 
-    <div class="footer">
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A> 
-    </div>
+
+{{chart.as_html}}
+</div>
+        
+
+
+
 
 </body>
+    <div class="footer_text">   
+    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size="5">About</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size="5">Help</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size="5">Team&nbsp;&nbsp;&nbsp;&nbsp;</font></A>  
+    </div>
 </html>
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-</script>
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalA" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
 
-{{ chart.as_html }}
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalteam" class="modal fade bd-example-modal-lg">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
+
+<!- this is the popup content need to work on show graph->
+<!-- Modal -->
+<div id="myModalabout" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
+
+<!- this is the popup content ->
+<!-- Modal -->
+<div id="myModalhelp" class="modal fade">
+<div class="modal-dialog">
+          <div class="modal-content">
+          </div>   
+    </div>
+</div>
+
+
