@@ -9,19 +9,21 @@ class WorkloadA(models.Model):
     avgWriteLatency = models.FloatField()
 
 class WorkloadB(models.Model):
-    expID = models.IntegerField()
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
+    avgWriteLatency = models.FloatField()
 
 class WorkloadC(models.Model):
-    expID = models.IntegerField()
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
 
 class WorkloadD(models.Model):
-    expID = models.IntegerField()
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
+    avgInsertLatency = models.FloatField()
 
 class Experiments(models.Model):
     expID = models.IntegerField()

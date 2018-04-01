@@ -43,13 +43,12 @@ def workloada(request):
 def workloadb(request):
     data = WorkloadB.objects.all()
 
-    # DataSource object                                                                                                
-    data_source = ModelDataSource(data, ['workload', 'latency'])
+    # DataSource object                                                                                                 
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgWriteLatency'])
 
-    # Chart object                                                                                                    
+    # Chart object                                                                                                      
     chart = ColumnChart(data_source,
                       options={'title': 'Workload B',
-                               'hAxis': {'title': 'Throughput / sec'},
                                'vAxis': {'title': 'Average Latency'}
                                })
     context = {'chart': chart}
@@ -58,13 +57,12 @@ def workloadb(request):
 def workloadc(request):
     data = WorkloadC.objects.all()
 
-    # DataSource object                                                                                               
-    data_source = ModelDataSource(data, ['workload', 'latency'])
+    # DataSource object                                                                                                                                                                                                               
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency'])
 
-    # Chart object                                                                                                  
+    # Chart object                                                                                                                                   
     chart = ColumnChart(data_source,
                       options={'title': 'Workload C',
-                               'hAxis': {'title': 'Throughput / sec'},
                                'vAxis': {'title': 'Average Latency'}
                                })
     context = {'chart': chart}
@@ -73,13 +71,12 @@ def workloadc(request):
 def workloadd(request):
     data = WorkloadD.objects.all()
 
-    # DataSource object                                                                                           
-    data_source = ModelDataSource(data, ['workload', 'latency'])
+    # DataSource object                                                                                                 
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgInsertLatency'])
 
-    # Chart object                                                                                                 
+    # Chart object                                                                                                      
     chart = ColumnChart(data_source,
-                      options={'title': 'Workload D',
-                               'hAxis': {'title': 'Throughput / sec'},
+                      options={'title': 'Workload A',
                                'vAxis': {'title': 'Average Latency'}
                                })
     context = {'chart': chart}
