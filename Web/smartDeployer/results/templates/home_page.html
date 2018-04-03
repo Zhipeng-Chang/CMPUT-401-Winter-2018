@@ -29,26 +29,26 @@
   position: fixed;
   text-align: left;
   bottom: 0px;
-  left: 5px;
-  right: 5px;
+  left: 0px;
+  right: 0px;
   height: 35px;
   border-radius: 10px;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding-left: 30px;
+  padding-top: 10px;
 }
 
 div.h1 {
     padding-top: 25px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     padding-left: 30px;
 }
 
 div.h2 {
-    padding-top: 15px;
+    padding-top: 2px;
     padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
+    padding-bottom: 0px;
+    padding-left: 30px;
 }
 
 div.h3 {
@@ -58,10 +58,14 @@ div.h3 {
     padding-left: 15px;
 }
 
-body { font: 8px Arial;}
-h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 10px;padding: 0; margin: 0;}
+div.line{
+  line-height: 70%;
+}
 
-h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 10px;padding: 0; margin: 0; font: 20px Arial;}
+body { font: 8px Arial;}
+h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 10px;padding: 0; margin: 0;padding-left: 20px;}
+
+h2 { background-color: #eee; height: 40px; border: 0px ; border-radius: 10px;padding: 0; margin: 0;}
 
 h3 { background-color: white; height: 640px; border: 0px; border-radius: 10px;padding: 0; margin: 0; font-weight: normal;} 
 
@@ -73,7 +77,7 @@ path {
     fill: none;
 }
 #first{
-    height: 90%;
+    height: 100%;
 }
 
 .axis path,
@@ -86,12 +90,12 @@ path {
 
 .column {
     float: center;
-    width: 98%;
+    width: 100%;
     border-radius: 10px;
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .row:after {
@@ -103,64 +107,55 @@ path {
 <body>
     <body bgcolor=white>
     <html>
+    <div>
+    <h1><img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
+    <div class="h1"><font size= 6>SmartDeployer Visualization Tool</div>
+    </h1></div>
 
-    <h1>
-    <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
-    <div class="h1">SmartDeployer</div>
-    </h1>
-
-    <h6>
-        <p></p>
-    </h6>
-
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> </h2>
-
-    <h6>
-        <p></p>
-    </h6>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size=5>Results</font></A>  </div> </h2>
 
     <h3> 
     <div class="row"></div>
     <div class="column" style="background-color:#aaa;">
-    <h4><font size="5">The 3 experiments</font></h4>
-    <p>- Experiment 1: 4 VCPU'S, 8 GB RAM for 1 container<br>
-    - Experiment 2: 2 VCPU'S, 4 GB RAM for 2 containers<br>
-    - Experiment 3: 1 VCPU'S, 2 GB RAM for 4 containers<br>
+    <h4><font size= 4 >The following experiments test various Casssandra configrations for the SmartDeployer :</font></h4>
+    <p><font size= 4;><div class="line">- Experiment 1: 8 VCPU'S, 16 GB RAM for 1 Docker container<br>
+    - Experiment 2: 4 VCPU'S, 8 GB RAM for 2 Docker containers<br>
+    - Experiment 3: 2 VCPU'S, 4 GB RAM for 4 Docker containers<br></div>
     </p>
     </div>
     <div class="column" style="background-color:#bbb;">
-      <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloada'%}'" ><font size="4">Workload A: Update heavy workload</font></button></p>
+      <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloada'%}'" ><font size= 3 >Workload A: Update heavy workload</font></button></p>
 
  
     </h4>
-    <p>This workload has a mix of 50/50 reads and writes</p>
+    <p><font size= 3 >This workload has a mix of 50/50 reads and writes</p>
     </div>
 
     <div class="column" style="background-color:#ccc;">
 
-            <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadb'%}'" ><font size="4">Workload B: Read mostly workload</font></button></p>
+            <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadb'%}'" ><font size= 3 >Workload B: Read mostly workload</font></button></p>
  
     </h4>
 
-    <p>This workload has a 95/5 reads/write mix.</p>
+    <p><font size= 3 >This workload has a 95/5 reads/write mix.</p>
     </div>
 
     <div class="column" style="background-color:#ddd;">
 
 
-            <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadc'%}'" ><font size="4">Workload C: Read only</font></button></p>
+            <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadc'%}'" ><font size= 3 >Workload C: Read only</font></button></p>
  
     </h4>
 
-    <p>This workload is 100% read.</p>
+    <p><font size= 3 >This workload is 100% read.</p>
     </div>
     <div class="column" style="background-color:#eee;">
 
-                 <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadd'%}'" ><font size="4">Workload D: Read latest workload</font></button></p>
+                 <h4><p><button class="btn btn-primary" type="button" onclick="location.href='{% url 'workloadd'%}'" ><font size= 3 >Workload D: Read latest workload</font></button></p>
  
     </h4>
 
-    <p>New records are inserted, and the most recently inserted records are the most popular.</p>
+    <p><font size= 3 >New records are inserted, and the most recently inserted records are the most popular.</p>
     </div>
     </h3>
 
@@ -168,7 +163,7 @@ path {
     
 </body>
     <div class="footer_text">   
-    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size="5">About</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size="5">Help</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size="5">Team&nbsp;&nbsp;&nbsp;&nbsp;</font></A>  
+    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size=3>About</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size=3>Help</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size=3>Team&nbsp;&nbsp;&nbsp;&nbsp;</font></A>  
     </div>
 </html>
 

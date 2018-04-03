@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});</script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <!- keep the head to import bootstrap lib ->
 <head>
@@ -17,49 +18,69 @@
 <!- keep the head to import bootstrap lib ->
 
 <style> 
+
+
+.modal-content {
+  overflow:auto;
+}
+
 .footer_text{
   background-color:#eee;
   position: fixed;
   text-align: left;
   bottom: 0px;
-  left: 5px;
-  right: 5px;
+  left: 0px;
+  right: 0px;
   height: 35px;
   border-radius: 10px;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding-left: 30px;
+  padding-top: 10px;
 }
+
 div.h1 {
     padding-top: 25px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     padding-left: 30px;
 }
+
 div.h2 {
-    padding-top: 15px;
+    padding-top: 2px;
     padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
+    padding-bottom: 0px;
+    padding-left: 30px;
 }
+
 div.h3 {
     padding-top: 10px;
     padding-right: 100px;
     padding-bottom: 10px;
     padding-left: 15px;
 }
-body { font: 12px Arial;}
-h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
-h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
-h3 { background-color: #EEEEEE; height: 625; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
+
+div.line{
+  line-height: 70%;
+  padding-left: 30px;
+}
+
+body { font: 8px Arial;}
+h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 10px;padding: 0; margin: 0;padding-left: 20px;}
+
+h2 { background-color: #eee; height: 40px; border: 0px ; border-radius: 10px;padding: 0; margin: 0;}
+
+h3 { background-color: white; height: 640px; border: 0px; border-radius: 10px;padding: 0; margin: 0; font-weight: normal;} 
+
 h6 { background-color: white; height: 80; border: 0px; border-radius: 10px;padding: 0; margin: 0; font-weight: normal;} 
+
 path { 
     stroke: steelblue;
     stroke-width: 2;
     fill: none;
 }
 #first{
-    height: 50%;
+    height: 100%;
 }
+
 .axis path,
 .axis line {
     fill: none;
@@ -68,31 +89,52 @@ path {
     shape-rendering: crispEdges;
 }
 
+.column {
+    float: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 </style>
 <body>
     <body bgcolor=white>
     <html>
+    <div>
+    <h1><img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
+    <div class="h1"><font size= 6>SmartDeployer Visualization Tool</div>
+    </h1></div>
 
-    <h1>
-    <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
-    <div class="h1">SmartDeployer</div>
-    </h1>
-    <h6>
-        <p></p>
-    </h6>
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> 
-    </h2>
+    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size=5>Results</font></A>  </div> </h2>
 
-<div id="container">
+    <h3> 
 
 
+    
+    </div>
+    {{chart.as_html}}
 
-{{chart.as_html}}
-</div>
-        
+    <p><font size= 4;><div class="line">- Experiment 1: 8 VCPU'S, 16 GB RAM for 1 Docker container<br>
+    - Experiment 2: 4 VCPU'S, 8 GB RAM for 2 Docker containers<br>
+    - Experiment 3: 2 VCPU'S, 4 GB RAM for 4 Docker containers<br></div>
+    </p>
+ 
+    </h3>
+
+
+
+    
 </body>
     <div class="footer_text">   
-    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size="5">About</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size="5">Help</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size="5">Team&nbsp;&nbsp;&nbsp;&nbsp;</font></A>  
+    <A HREF="{% url 'about'%}" data-toggle="modal" data-target="#myModalabout"><font size=3>About</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="{% url 'help'%}" data-toggle="modal" data-target="#myModalhelp"><font size=3>Help</font></A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="{% url 'team'%}"data-toggle="modal" data-target="#myModalteam"><font size=3>Team&nbsp;&nbsp;&nbsp;&nbsp;</font></A>  
     </div>
 </html>
 
@@ -131,3 +173,27 @@ path {
           </div>   
     </div>
 </div>
+
+<!- this is the popup content need to work on show graph->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!- this is the popup ->
+
+
