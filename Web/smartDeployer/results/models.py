@@ -3,22 +3,30 @@ from django.db import models
 # Create your models here.
 
 class WorkloadA(models.Model):
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
+    avgWriteLatency = models.FloatField()
 
 class WorkloadB(models.Model):
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
+    avgWriteLatency = models.FloatField()
 
 class WorkloadC(models.Model):
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
 
 class WorkloadD(models.Model):
-    workload = models.IntegerField()
-    latency = models.FloatField()
+    exp = models.TextField()
+    avgThroughput = models.FloatField()
+    avgReadLatency = models.FloatField()
+    avgInsertLatency = models.FloatField()
 
 class Experiments(models.Model):
-    cpu = models.IntegerField()
-    mem = models.IntegerField()
+    expID = models.IntegerField()
+    cpus = models.IntegerField()
+    ram = models.IntegerField()
     io = models.IntegerField()

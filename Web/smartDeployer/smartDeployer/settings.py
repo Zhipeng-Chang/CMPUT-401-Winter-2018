@@ -25,7 +25,7 @@ SECRET_KEY = '7qw)wt#y7uodl&8g_#hbccn&n^y%m9ypvhta0158xj0ft@_9uz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['199.116.235.47']
+ALLOWED_HOSTS = ['199.116.235.47', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graphos',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -74,13 +75,14 @@ WSGI_APPLICATION = 'smartDeployer.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 
 
 # Password validation

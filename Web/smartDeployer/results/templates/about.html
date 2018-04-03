@@ -1,100 +1,25 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style> 
-.footer_text{
-  background-color:#eee;
-  position: fixed;
-  text-align: left;
-  bottom: 0px;
-  left: 5px;
-  right: 5px;
-  height: 35px;
-  border-radius: 10px;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-.footer_white {
-  position: fixed;
-  background-color:white;
-  bottom: 50px;
-  height: 1px;
-    left: 5px;
-  right: 5px;
-  padding-left: 15px;
-  padding-top: 15px;
-}
-div.h1 {
-    padding-top: 25px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-}
-div.h2 {
-    padding-top: 15px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-}
-div.h3 {
-    padding-top: 10px;
-    padding-right: 100px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-}
-body { font: 12px Arial;}
-h1 { background-color: #EEEEEE; height: 80px;border: 0px ;border-radius: 5px;padding: 0; margin: 0;}
-h2 { background-color: #eee; height: 60px; border: 0px ; border-radius: 5px;padding: 0; margin: 0; font: 20px Arial;}
-h3 { background-color: #EEEEEE; height: 10; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;}
-h6 { background-color: white; height: 40 px; border: 0px; border-radius: 5px;padding: 0; margin: 0; font-weight: normal;} 
-path { 
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-}
-#first{
-    height: 50%;
-}
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-</style>
-<body>
-    <body bgcolor=white>
-    <html>
-
+    <div class="modal-content">    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">About the project</h4>
+      </div>
+<div class="modal-body" >
     <h1>
     <img src="https://www.bourses-etudiants.ma/wp-content/uploads/2017/09/ua.png" height=80 width=80 style="float: left;">
     <div class="h1">SmartDeployer</div>
     </h1>
-            <h6>
-        <p>
-        
-        </p>
-    </h6>
-    <h2> <div class = "h2"><A HREF="{% url 'index'%}"><font size="5">Results</font></A>  </div> 
-    </h2>
+    <div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
     <h3> 
-        <p> <div class="h3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Currently the default configuration for Cassandra as a NoSQL database is not very good and can be improved. Since many database administrators simply deploy the default configuration regardless of their given architecture, the databases usually aren't very efficient or practical. <br/><br/>
+        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Currently the default configuration for Cassandra as a NoSQL database is not very good and can be improved. Since many database administrators simply deploy the default configuration regardless of their given architecture, the databases usually aren't very efficient or practical. <br/><br/>
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The SmartDeployer is an automation tool that will deploy Cassandra via Docker Containers in a smarter way than just the default installation process. Eventually the SmartDeployer will look to optimize the configuration of Cassandra on a given cluster of virtual machines. And the project would also include a web-based visualization tool, which will read the benchmark and output as graph. <br/><br/>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project is aimed at database administrators on distributed linux database servers. With the use of this deployer it will continue to allow them to easily deploy NoSQL databases while maximizing the underlying configuration given their architecture and resources. <br/> </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The project is aimed at database administrators on distributed linux database servers. With the use of this deployer it will continue to allow them to easily deploy NoSQL databases while maximizing the underlying configuration given their architecture and resources. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> 
+      </p>
     </div></h3>
+</div>
 
-    <footer>
-    <div class="footer_white">   
-        <p> 
-        </br>
-        </p>
-          </div>
-    <div class="footer_text">   
-    <A HREF="{% url 'about'%}"><font size="3">About</font></A> &nbsp;&nbsp; <A HREF="{% url 'help'%}"><font size="3">Help</font></A> &nbsp;&nbsp;<A HREF="{% url 'team'%}"><font size="3">Team</font></A>  
-    </div>
-    </footer>
-
-</body>
-</html>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+</div>
