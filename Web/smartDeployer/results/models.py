@@ -5,7 +5,7 @@ from django.db import models
 class WorkloadA(models.Model):
     exp = models.TextField()
     avgThroughput = models.FloatField()
-    avgReadLatency = models.FloatField()
+e    avgReadLatency = models.FloatField()
     avgWriteLatency = models.FloatField()
 
 class WorkloadB(models.Model):
