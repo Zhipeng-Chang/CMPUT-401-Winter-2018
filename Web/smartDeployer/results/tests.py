@@ -39,23 +39,41 @@ class MainTests(TestCase):
 
 
 	def test_workloadA_page(self):
-		response = self.client.get('http://127.0.0.1:8000/results/workloada')
-		self.assertContains(response, '', status_code=301)
+
+		request = 'fake request'
+		response = workloada(request)
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'WorkloadA')
+
+
+
 
 	def test_workloadB_page(self):
-		response = self.client.get('http://127.0.0.1:8000/results/workloadb')
-		self.assertContains(response, '', status_code=301)
+
+		request = 'fake request'
+		response = workloadb(request)
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'WorkloadB')
+
+
+
 
 	def test_workloadC_page(self):
-		response = self.client.get('http://127.0.0.1:8000/results/workloadc')
-		self.assertContains(response, '', status_code=301)
+
+		request = 'fake request'
+		response = workloadc(request)
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'WorkloadC')
+
+
+
 
 	def test_workloadD_page(self):
-		response = self.client.get('http://127.0.0.1:8000/results/workloadd')
-		self.assertContains(response, '', status_code=301)
 
-	def test_graph_wrong_page(self): 
-		response = self.client.get('http://127.0.0.1:8000/results/workloade')
-		self.assertContains(response, '', status_code=404)
+		request = 'fake request'
+		response = workloadd(request)
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'WorkloadD')
+
 
 
