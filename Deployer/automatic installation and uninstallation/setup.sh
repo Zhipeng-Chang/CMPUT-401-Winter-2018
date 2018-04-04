@@ -3,16 +3,61 @@
 
 
 #setup for each vm
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+ 
+case $key in
+    -k|--keyname)
+    KEYNAME="$2"
+    shift # past argument
+    shift # past value
+esac
+done
+
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+
+# warning user ;)
+while true; do
+    read -p "If you don't follow instruction, the script will mess up your computer. Understood?" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 
 
 #setting up for first vm (master vm)
-sudo apt -y install python-pip
-pip install requests
-sudo apt update
-sudo apt -y install docker.io
-sudo docker pull cassandra 
+sudo apt-get update
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-trusty main'
 
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+
+sudo apt-get update
+echo "y" | sudo apt-get install docker-ce
+sudo docker pull cassandra
+sudo docker pull webscam/cassandra:3.10
+
+sudo docker swarm init > swarm.txt
+
+
+# test if ip.txt exist
 input_ip=$(cat ip.txt)
+if [ "$input_ip" == "cat: ip.txt: No such file or directory" ]
+then
+      echo "can't find ip.txt (program exit)"
+      exit 1
+fi
+
+
+# test if ip.txt is empty
 total_ip=0
 ip="ip"
 
@@ -26,30 +71,41 @@ for i in "${ADDR[@]}";
 if [ "${total_ip}" -le 0 ]; then
     echo "installation done"
     exit 1
+fi
+
+# test if the key is empty
+if [ -z "$KEYNAME" ];
+	then
+	echo "Please input your key name (more detail see readme)"
+	exit 1
+fi
 
 
 for i in $input_ip;
 	do
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo apt -y install python-pip"
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "pip install requests"
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo apt update"
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo apt -y install docker.io"
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo docker pull cassandra"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo apt-get update"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-trusty main'"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo apt-get update"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "echo 'y' | sudo apt-get install docker-ce"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo docker pull cassandra"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo docker pull webscam/cassandra:3.10"
 	done
 
  
 # for first vm, init a swarm (this vm is swarm manager)
-sudo docker swarm init > swarm.txt
+
 swarm=$(python3 swarm.py)
 
 for i in $input_ip;
 	do
-		ssh -i ~/.ssh/smartdeployer ubuntu@$i "sudo $swarm"
+		ssh -i ~/.ssh/$KEYNAME ubuntu@$i "sudo $swarm"
 		
 	done 
 
 #set up the network for this machine
-docker network create --driver overlay --scope swarm cassandra-net
+sudo docker network create --driver overlay --scope swarm cassandra-net
 # get the right compose file (note: this file could be pre-made by other script)
 
 

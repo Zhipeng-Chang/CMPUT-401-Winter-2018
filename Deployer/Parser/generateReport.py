@@ -8,8 +8,9 @@
 
 file = open("all_result.txt", 'w')
 
-fileOrder = ['a','b','c','d','e']
-for i in range(0,5):
+fileOrder = ['a','b','c','d','f','e']
+fileOderLength = len(fileOrder)
+for i in range(0,fileOderLength):
 	file_order = fileOrder[i]
 	temp_file_name = "workload_run_output"+file_order+".txt"
 	

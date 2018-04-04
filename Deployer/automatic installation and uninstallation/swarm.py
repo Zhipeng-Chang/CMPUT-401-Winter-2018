@@ -7,7 +7,7 @@ file_line = file.readlines()
 
 
 
-output = file_line[3]+file_line[4]+file_line[5]+file_line[6]
+output = file_line[3]+file_line[4]+file_line[5]
 
 
 output = output.replace("    ", "")
