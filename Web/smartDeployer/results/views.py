@@ -2,10 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import WorkloadA, WorkloadB, WorkloadC, WorkloadD, Experiments
 
-from graphos.sources.simple import SimpleDataSource
 from graphos.renderers.gchart import ColumnChart
 from graphos.sources.model import ModelDataSource
-
 
 
 # Create your views here.
@@ -30,54 +28,95 @@ def workloada(request):
     data = WorkloadA.objects.all()
     
     # DataSource object
-    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgWriteLatency'])
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgWriteLatency', 'avgThroughput'])
+
+    classicOptions = {
+        'series': {
+            0: {'targetAxisIndex': 0},
+            1: {'targetAxisIndex': 0},
+            2: {'targetAxisIndex': 1}
+            },
+        'title': 'Workload A - Average latency on the left, Average throughput on the right',
+        'vAxes': {
+               0: {'title': 'AVG LATENCY'},
+               1: {'title': 'AVG THROUGHPUT'}
+               }
+        }
+
 
     # Chart object
-    chart = ColumnChart(data_source, 
-                      options={'title': 'Workload A', 
-                               'vAxis': {'title': 'Average Latency'}
-                               })
+    chart = ColumnChart(data_source, options=classicOptions)
     context = {'chart': chart}
     return render(request, 'workloada.html', context)
 
 def workloadb(request):
     data = WorkloadB.objects.all()
 
-    # DataSource object                                                                                                 
-    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgWriteLatency'])
+    # DataSource object
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgWriteLatency', 'avgThroughput'])
 
-    # Chart object                                                                                                      
-    chart = ColumnChart(data_source,
-                      options={'title': 'Workload B',
-                               'vAxis': {'title': 'Average Latency'}
-                               })
+    classicOptions = {
+        'series': {
+            0: {'targetAxisIndex': 0},
+            1: {'targetAxisIndex': 0},
+            2: {'targetAxisIndex': 1}
+            },
+        'title': 'Workload B - Average latency on the left, Average throughput on the right',
+        'vAxes': {
+            0: {'title': 'AVG LATENCY'},
+            1: {'title': 'AVG THROUGHPUT'}
+            }
+        }
+
+    # Chart Object
+    chart = ColumnChart(data_source, options=classicOptions)
     context = {'chart': chart}
     return render(request, 'workloadb.html', context)
 
 def workloadc(request):
     data = WorkloadC.objects.all()
 
-    # DataSource object                                                                                                                                                                                                               
-    data_source = ModelDataSource(data, ['exp', 'avgReadLatency'])
+    # DataSource object
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgThroughput'])
 
-    # Chart object                                                                                                                                   
-    chart = ColumnChart(data_source,
-                      options={'title': 'Workload C',
-                               'vAxis': {'title': 'Average Latency'}
-                               })
+    classicOptions = {
+        'series': {
+            0: {'targetAxisIndex': 0},
+            1: {'targetAxisIndex': 1}
+            },
+        'title': 'Workload C - Average latency on the left, Average throughput on the right',
+        'vAxes': {
+            0: {'title': 'AVG LATENCY'},
+            1: {'title': 'AVG THROUGHPUT'}
+            }
+        }
+    
+    # Chart object
+    chart = ColumnChart(data_source, options=classicOptions)
     context = {'chart': chart}
     return render(request, 'workloadc.html', context)
 
 def workloadd(request):
     data = WorkloadD.objects.all()
 
-    # DataSource object                                                                                                 
-    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgInsertLatency'])
+    # DataSource object
+    data_source = ModelDataSource(data, ['exp', 'avgReadLatency', 'avgInsertLatency', 'avgThroughput'])
 
-    # Chart object                                                                                                      
-    chart = ColumnChart(data_source,
-                      options={'title': 'Workload A',
-                               'vAxis': {'title': 'Average Latency'}
-                               })
+    classicOptions = {
+        'series': {
+            0: {'targetAxisIndex': 0},
+            1: {'targetAxisIndex': 0},
+            2: {'targetAxisIndex': 1}
+            },
+        'title': 'Workload D - Average latency on the left, Average throughput on the right',
+        'vAxes': {
+               0: {'title': 'AVG LATENCY'},
+               1: {'title': 'AVG THROUGHPUT'}
+               }
+        }
+
+
+    # Chart object
+    chart = ColumnChart(data_source, options=classicOptions)
     context = {'chart': chart}
     return render(request, 'workloadd.html', context)
