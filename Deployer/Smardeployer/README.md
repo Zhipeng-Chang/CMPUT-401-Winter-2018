@@ -1,9 +1,5 @@
-# Description:
-<strong/> setup.sh <strong/> will automatically install docker, and enable swarm mode for all the provided vm(instance) <br/>
-uninstall.sh will automatically uninstall everything that is related to docker from all provided vm(instance)<br/>
-note: all vm(instance) has to be existed at same subnet<br/>
-
-# Instruction:
+# Smartdeployer Usage:
+## Instruction:
 Grant the permission to smartdeployer.sh
 ```chmod u+x smartdeployer.sh```
 
